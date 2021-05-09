@@ -6,7 +6,7 @@
     <div v-for="post in posts" :key="post.id" class="psot">
       <!-- 标题 -->
       <h4>{{ post.title.rendered }}</h4>
-      <!-- 摘要 -->
+      <!-- 摘要1 -->
       <div class="post-content" v-html="post.excerpt.rendered" />
     </div>
   </div>
