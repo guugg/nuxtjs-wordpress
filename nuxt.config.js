@@ -35,6 +35,16 @@ export default {
     { src: '@/plugins/data.server', ssr: true },
     { src: '@/plugins/ElementUI', ssr: true } // Nuxt 默认为开启 SSR，采用服务端渲染，也可以手动配置关闭false
   ],
+  // 防止内存泄漏
+  hooks: {
+    'build:done' () {
+      const modulesToClear = ['vue', 'vue/dist/vue.runtime.common.prod']
+      modulesToClear.forEach((entry) => {
+        delete require.cache[require.resolve(entry)]
+      })
+    },
+  },
+
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     babel: {

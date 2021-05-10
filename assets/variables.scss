@@ -1,2 +1,9 @@
-$primary: orangered;
 $secondary: #e43703f5;
+/* 改变主题色变量 */
+$--color-primary: #409EFF !default;
+$--color-white: #FFFFFF !default;
+$--color-black: #000000 !default;
+
+$--font-path: '~element-ui/lib/theme-chalk/fonts';
+
+@import "~element-ui/packages/theme-chalk/src/index";
